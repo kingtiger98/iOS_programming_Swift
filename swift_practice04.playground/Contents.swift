@@ -25,3 +25,4 @@ for name in names[0..<3] { // 0 생략해도 똑같이 출력
 var x = 1, y = 2
 var z = x>y ? x : y // 조건식이 거짓이므로 y가 z로 대입됨
 print("x와 y중 큰 수는 \(z)") //x와 y중 큰 수는 4
+
