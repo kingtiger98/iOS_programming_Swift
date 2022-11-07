@@ -20,4 +20,3 @@ let d = a // Optional로 사용될 수 있으므로 Optional형임
 let e = a + 1
 print(a,b,c,d,e) // Optional(1), 1, 1, Optional(1), 2
 print(type(of:a),type(of:b),type(of:c),type(of:d),type(of:e)) // Optional<Int> Int Int Optional<Int> Int
-
