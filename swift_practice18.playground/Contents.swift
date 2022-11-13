@@ -31,3 +31,17 @@ let result = {(num1 : Int, num2 : Int) -> Int in
 
 // 주의 :매개변수 자료형 안씀!
 print(result(30,40)) // 1200
+
+// ===================================== 후행 클로저 =======================================
+// 클로저가 함수의 마지막 argument라면 마지막 매개변수명(cl)을 생략한 후 함수 소괄호 외부에 클로저를 작성
+func someFun(cl: () -> Void) {
+}
+// trailing closure를 사용 안하면
+someFun(cl: {
+  //closure’s body
+})
+// trailing closure 사용
+someFun() {
+  //trailing closure's body goes here
+}
+
