@@ -38,7 +38,7 @@ func tripleOutput(convertFunc : (Int)->Int, num : Int) {
     print("결과는 \(result)")
 }
 
-// 첫 번째 매개변수의 인자는 함수를 담은 변수인 toTriple
+// 첫 번째 매개변수의 인자는 함수를 담은 변수인 toTriple ===============================================
 tripleOutput(convertFunc: toTriple, num: 10) // 결과는 30
 
 // 실습 => 세 번째 : 함수를 리턴값으로 사용할 수 있다. =================================================
