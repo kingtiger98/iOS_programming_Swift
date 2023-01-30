@@ -45,7 +45,6 @@ class Woman{
         self.age = joAge
     }
 }
-
 // var jo = Woman() <= 오류남, Woman()는 사라진 default initializer를 호출하는 것이기 때문
 var jo = Woman(joName: "서연", joAge: 25) // 내가 만든 designated initializer 양식에 맞게 인자 전달
 jo.display() // 이름은 서연 나이는 25
