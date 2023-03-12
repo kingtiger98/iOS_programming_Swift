@@ -46,4 +46,62 @@ someFun() {
 }
 
 
+// 클로저 처음부터 한 번 더 정리!
+// 클로저 add, substract, divide 생성 ============================
+let add:(Int, Int) -> Int = {(a: Int, b: Int) -> Int in
+    return a+b
+}
 
+let substract:(Int, Int) -> Int = {(a: Int, b: Int) -> Int in
+    return a-b
+}
+
+let divide:(Int, Int) -> Int = {(a:Int, b:Int) -> Int in
+    return a/b
+}
+
+// 메소드를 인자로 받는 함수 생성
+func calculate(a: Int, b: Int, method: (Int, Int) -> Int) -> Int {
+    return method(a, b)
+}
+
+var calculated: Int
+
+calculated = calculate(a: 10, b: 20, method: add)
+print(calculated)
+
+// 함수 뒤에 클로저를 바로 작성 할 수도 있다. ============================================
+calculated = calculate(a: 10, b: 20, method: {(left: Int, right: Int) -> Int in
+    return left * right
+})
+print(calculated)
+
+// 후행 클로저 ===========================================================
+// 함수의 전달인자 마지막에 클로저가 오면 함수 바깥으로 뺄 수 있다!
+calculated = calculate(a: 10, b: 20) {(left: Int, right: Int) -> Int in
+    return left*right
+}
+
+// 반환타입 생략가능 =============================================================
+// 이미 컴파일러가 알고 있기떄문(calculate함수의 선언부에 이미 method함수의 타입이 이미 나와있음)
+calculated = calculate(a: 10, b: 20, method: {(left: Int, right: Int) in
+    return left*right
+})
+// 후행클로저에 적용 가능
+calculated = calculate(a: 10, b: 20) {(left: Int, right: Int) in
+    return left*right
+}
+
+// 단축 인자이름 =================================
+// 클로저의 매개변수 이름이 불필요할 때 사용합니다.
+calculated = calculate(a: 10, b: 20, method: {
+    return $0 * $1
+})
+// 후행 클로저와 같이 사용 가능
+calculated = calculate(a: 10, b: 20) {
+    return $0 * $1
+}
+
+// 암시적 반환 표현 ======================================================
+// 클로저가 반환하는 값이 있다면 마지막 줄은 당연히 반환값으로 취급하여 return이 생략 가능
+calculated = calculate(a: 10, b: 20) { $0 * $1 }
