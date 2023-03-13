@@ -28,7 +28,7 @@ class UniversityStudent: Student {
 // 인스턴스들의 타입 확인해보기 : is 연산자 사용 ==========================
 var jaeha: Person = Person()
 var seoyeon: Student = Student()
-var yagom: UniversityStudent = UniversityStudent()
+var young: UniversityStudent = UniversityStudent()
 
 var typeCheck: Bool
 
@@ -44,9 +44,9 @@ typeCheck = seoyeon is Student           // true
 typeCheck = seoyeon is UniversityStudent // false
 
 // 고로 UniversityStudent의 인스턴스 yagom은 모든 클래스의 특성을 가지고 있다
-typeCheck = yagom is Person            // true
-typeCheck = yagom is Student           // true
-typeCheck = yagom is UniversityStudent // true
+typeCheck = young is Person            // true
+typeCheck = young is Student           // true
+typeCheck = young is UniversityStudent // true
 
 // 업캐스팅 =================================================================================
 // as를 사용하여 부모클래스의 인스턴스로 사용할 수 있도록 타입전환, 사용 많이 안함
@@ -54,7 +54,7 @@ typeCheck = yagom is UniversityStudent // true
 
 // Person타입이라도 UniversityStudent의 인스턴스가 들어올 수 있음
 var mike: Person = UniversityStudent() as Person // 클래스 UniversityStudent의 인스턴스 mike생성
-var jenny: Student = Student() // 클래스 Student의 인스턴스 jenny생성
+var jenny: Student = UniversityStudent() 
 var jina: Any = Person()// as Any는 생략 가능, 클래스 Person의 인스턴스 jina생성
 
 
@@ -109,6 +109,6 @@ func doSomething(someone: Person) {
 
 doSomething(someone: mike as Person) // 멤버쉽 트레이닝을 갑니다 신남!
 doSomething(someone: mike) // 멤버쉽 트레이닝을 갑니다 신남!
-doSomething(someone: jenny) // 등교를 합니다
+doSomething(someone: jenny) // 멤버쉽 트레이닝을 갑니다 신남!
 
 
